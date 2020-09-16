@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.coex_client.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_signupFragment"
+            app:destination="@id/signupFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainActivity2"
+
+            app:destination="@id/mainActivity2" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPassFragment"
+            app:destination="@id/forgotPassFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.coex_client.ui.signup.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainActivity2"
+        android:name="com.example.coex_client.MainActivity2"
+        android:label="activity_main2"
+        tools:layout="@layout/activity_main2" />
+
+    <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.example.coex_client.ui.forgot.ForgotPassFragment"
+        android:label="ForgotPassFragment"
+        tools:layout="@layout/fragment_forgot_pass">
+        <action
+            android:id="@+id/action_forgotPassFragment_to_resetPassFragment"
+            app:destination="@id/resetPassFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPassFragment"
+        android:name="com.example.coex_client.ui.forgot.ResetPassFragment"
+        android:label="ResetPassFragment"
+        tools:layout="@layout/fragment_reset_pass">
+        <action
+            android:id="@+id/action_resetPassFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+</navigation>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.forgot.ForgotPassFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:elevation="0.5dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/login_background"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Forgot Password"
+                android:textColor="@color/title_login_color"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Email"
+                android:textColor="@color/title_login_color" />
+
+            <EditText
+                android:id="@+id/forgot_email"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:hint="Enter your email"
+                android:fontFamily="sans-serif-light"
+                android:inputType = "textEmailAddress"
+                android:theme="@style/MyEditText"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp" />
+
+
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="SEND"
+                android:textSize="18dp"
+                android:background="@drawable/login_button_background"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
+

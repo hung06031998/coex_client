@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "400879072699",
+    "firebase_url": "https://fir-token-e3a3b.firebaseio.com",
+    "project_id": "fir-token-e3a3b",
+    "storage_bucket": "fir-token-e3a3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400879072699:android:c11c0665919e4c3bc5009e",
+        "android_client_info": {
+          "package_name": "com.example.coex_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400879072699-11tiiievjtijrvfucdgq0d28c3bds6jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvBpbCj8NqHTQUrOro9cdvVDupywhDLZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400879072699-11tiiievjtijrvfucdgq0d28c3bds6jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
