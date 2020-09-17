@@ -77,6 +77,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         imgMyLocation.setOnClickListener { view: View? -> moveToCurrentLocation() }
         moveToCurrentLocation()
         map.uiSettings.isZoomControlsEnabled = true;
+        map.uiSettings.isMyLocationButtonEnabled = false;
+        map.isMyLocationEnabled = true;
     }
 
     private fun startLocationUpdates() {
@@ -178,7 +180,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 if (location != null) {
                     val currentLatLng = LatLng(location.latitude, location.longitude)
                     map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng,15.0f))
-                    map.addMarker(MarkerOptions().position(currentLatLng))
+//                    map.addMarker(MarkerOptions().position(currentLatLng))
                 }
             }
     }
