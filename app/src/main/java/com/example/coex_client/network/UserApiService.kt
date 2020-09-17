@@ -2,11 +2,11 @@ import com.example.coex_client.model.forgot.ForgotRequest
 import com.example.coex_client.model.forgot.ResetRequest
 import com.example.coex_client.model.login.LoginRequest
 import com.example.coex_client.model.login.LoginResponse
+import com.example.coex_client.model.map.NearbyCWModel
 import com.example.coex_client.model.signup.SignupRequest
 import com.example.coex_client.model.signup.SignupResponse
 import com.example.coex_client.model.user.User
 import okhttp3.OkHttpClient
-import okhttp3.Response
 import okhttp3.ResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -43,7 +43,7 @@ private val retrofit =
 interface UserApiService {
 
     @Headers("Content-Type:application/json")
-    @POST("user/log-in/host")
+    @POST("user/log-in/client")
     fun login(@Body info: LoginRequest): retrofit2.Call<LoginResponse>
 
 
@@ -66,6 +66,10 @@ interface UserApiService {
     @GET("user/me")
     fun getUserMe(@Header("Authorization") token : String
     ) : retrofit2.Call<User>
+
+    @GET("co-workings/near")
+    fun getCoworkingNearbyAPI(@Header("Authorization") token: String, @Query("maxDistance") distance: Double, @Query("latitude") lat: Double, @Query("longitude") long:Double
+    ) : retrofit2.Call<NearbyCWModel>
 }
 
 
