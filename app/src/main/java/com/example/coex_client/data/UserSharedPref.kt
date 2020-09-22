@@ -6,7 +6,6 @@ import com.example.coex_client.R
 
 class UserSharedPref(context: Context) {
     private var prefs : SharedPreferences = context.getSharedPreferences("UserSharedPref",Context.MODE_PRIVATE)
-
     companion object{
         const val USER_TOKEN = "user_token"
         const val USER_ID = "user_id"

@@ -40,9 +40,9 @@
 
     <activity
         android:id="@+id/mainActivity2"
-        android:name="com.example.coex_client.MainActivity2"
+        android:name="com.example.coex_client.ui.map.MapsActivity"
         android:label="activity_main2"
-        tools:layout="@layout/activity_main2" />
+        tools:layout="@layout/activity_maps" />
 
     <fragment
         android:id="@+id/forgotPassFragment"
