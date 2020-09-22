@@ -29,17 +29,17 @@ class LoginFragment : Fragment() {
 
         val loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
-        binding.toSignup.setOnClickListener { view: View ->
+        binding.txtRegister.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
 
-        binding.btnForgotPass.setOnClickListener { view: View ->
+        binding.txtForgotPassword.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_loginFragment_to_forgotPassFragment)
         }
         binding.btnLogin.setOnClickListener {
             activity?.let { it1 ->
                 loginViewModel.signInAuthorize(
-                    binding.loginEmail.text.toString(), binding.loginPassword.text.toString(),
+                    binding.edtEmail.text.toString(), binding.edtPassword.text.toString(),
                     it1
                 )
             }

@@ -89,7 +89,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         loadPlacePicker()
         imgMyLocation.setOnClickListener { view: View? -> moveToCurrentLocation() }
         moveToCurrentLocation()
-        map.uiSettings.isZoomControlsEnabled = false;
+        map.uiSettings.isZoomControlsEnabled = true;
         map.setOnCameraIdleListener {
             val cameraPosition = map.cameraPosition
             val radiusInMeters: Double = getMapVisibleRadius(googleMap)
