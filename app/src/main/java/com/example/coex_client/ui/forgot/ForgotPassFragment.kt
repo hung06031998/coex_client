@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
 import com.example.coex_client.R
 import com.example.coex_client.databinding.FragmentForgotPassBinding
@@ -40,6 +41,10 @@ class ForgotPassFragment : Fragment() {
         binding.btnForgotPassword.setOnClickListener {
             forgotPassViewModel.forgotPass(binding.edtForgotPassEmail.text.toString())
             editor?.putString("email", binding.edtForgotPassEmail.text.toString())?.apply()
+        }
+
+        binding.btnBackForgotPass.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_forgotPassFragment_to_loginFragment)
         }
 
 
