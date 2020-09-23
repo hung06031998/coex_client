@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="white">#FFFFFF</color>
-    <color name="title_login_color">#519FFF</color>
-    <color name="hint_color">#9A9A9A</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
 
-
+    <color name="main_color">#FF0055</color>
+    <color name="white">#FFF</color>
+    <color name="silver">#C4C4C4</color>
+    <color name="boder_card">#e4e4e4</color>
+    <color name="silver_black">#C4C4C4</color>
+    <color name="black">#000</color>
+    <color name="blue">#14A5CC</color>
+    <color name="edit_text_focus">#0080FF</color>
+    <color name="edit_text_normal">#C4C4C4</color>
+    <color name="edit_text_error">#FF0055</color>
+    <color name="button_normal">#FF0055</color>
+    <color name="button_press">#CC0044</color>
+    <color name="colorFocus">#0080FF</color>
+    <color name="colorBtnPressed">#CC0044</color>
+    <color name="colorBtnNormal">#FF0055</color>
+    <color name="greemn">#66E66A</color>
+    <color name="title_login_color">#66E66A</color>
 </resources>

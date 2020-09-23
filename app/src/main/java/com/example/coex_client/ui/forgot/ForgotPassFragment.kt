@@ -37,9 +37,9 @@ class ForgotPassFragment : Fragment() {
 
 
 
-        binding.btnSend.setOnClickListener {
-            forgotPassViewModel.forgotPass(binding.forgotEmail.text.toString())
-            editor?.putString("email", binding.forgotEmail.text.toString())?.apply()
+        binding.btnForgotPassword.setOnClickListener {
+            forgotPassViewModel.forgotPass(binding.edtForgotPassEmail.text.toString())
+            editor?.putString("email", binding.edtForgotPassEmail.text.toString())?.apply()
         }
 
 
