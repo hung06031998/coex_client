@@ -92,6 +92,8 @@
     <string name="fragment_schedule_txt_style_room">List room</string>
     <string name="used">FOR USER</string>
     <string name="email">Email</string>
+    <string name="fullName">Full Name</string>
+    <string name="phoneNumber">Phone Number</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password</string>
     <string name="btnLogin">Login</string>

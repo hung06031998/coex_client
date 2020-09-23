@@ -28,16 +28,16 @@ class SignupFragment : Fragment() {
         )
 
         val signupViewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-        binding.toLogin.setOnClickListener { view: View ->
+        binding.txtLogin.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
         }
 
-        binding.btnSignup.setOnClickListener { view: View ->
+        binding.btnRegister.setOnClickListener { view: View ->
             signupViewModel.signUp(
-                binding.signupFullname.text.toString(),
-                binding.signupEmail.text.toString(),
-                binding.signupPhone.text.toString(),
-                binding.signupPassword.text.toString()
+                binding.edtFullName.text.toString(),
+                binding.edtEmail.text.toString(),
+                binding.edtPhoneNumber.text.toString(),
+                binding.edtPassword.text.toString()
             )
             signupViewModel.onSignUpSucssessfully.observe(
                 viewLifecycleOwner,
@@ -52,11 +52,11 @@ class SignupFragment : Fragment() {
                         signupViewModel.onSignUpComplete()
                     } else {
                         when{
-                            binding.signupPassword.text.toString() != binding.signupPasswordCf.text.toString() -> Toast.makeText(context,"Password does not match !",Toast.LENGTH_SHORT).show()
-                            binding.signupEmail.text.toString() == "" -> Toast.makeText(context,"Please enter email !",Toast.LENGTH_SHORT).show()
-                            binding.signupPassword.text.toString() == "" -> Toast.makeText(context,"Please enter password !",Toast.LENGTH_SHORT).show()
-                            binding.signupPasswordCf.text.toString() == "" -> Toast.makeText(context,"Please enter password confirm !",Toast.LENGTH_SHORT).show()
-                            binding.signupFullname.text.toString() == "" -> Toast.makeText(context,"Please enter your name !",Toast.LENGTH_SHORT).show()
+                            binding.edtPassword.text.toString() != binding.edtConfirmPassword.text.toString() -> Toast.makeText(context,"Password does not match !",Toast.LENGTH_SHORT).show()
+                            binding.edtEmail.text.toString() == "" -> Toast.makeText(context,"Please enter email !",Toast.LENGTH_SHORT).show()
+                            binding.edtPassword.text.toString() == "" -> Toast.makeText(context,"Please enter password !",Toast.LENGTH_SHORT).show()
+                            binding.edtConfirmPassword.text.toString() == "" -> Toast.makeText(context,"Please enter password confirm !",Toast.LENGTH_SHORT).show()
+                            binding.edtFullName.text.toString() == "" -> Toast.makeText(context,"Please enter your name !",Toast.LENGTH_SHORT).show()
                         }
                     }
 
