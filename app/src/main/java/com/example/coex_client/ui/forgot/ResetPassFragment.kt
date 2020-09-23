@@ -33,7 +33,7 @@ class ResetPassFragment : Fragment() {
         val email : String?  = sharedPref?.getString("email","")
 
         binding.btnReset.setOnClickListener {
-            resetPassViewModel.resetPass(email!!,binding.resetOtp.text.toString(),binding.resetNewPass.text.toString(),binding.resetCfPass.text.toString())
+            resetPassViewModel.resetPass(email!!,binding.edtOTP.text.toString(),binding.edtNewPass.text.toString(),binding.edtConfNewPass.text.toString())
         }
 
         resetPassViewModel.onResetSuccessfully.observe(viewLifecycleOwner, Observer<Boolean> { hasResetSucessfully ->

@@ -4,103 +4,133 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.forgot.ResetPassFragment">
+        tools:context=".ui.forgot.ResetPassFragment"
+        android:background="@drawable/blur_busine">
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="222dp"
+            android:layout_height="106dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@drawable/asset_5_6x1" />
+
+        <TextView
+            android:id="@+id/forpartner"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/login_activity_role_margin_top"
+            android:gravity="center"
+            android:text="@string/used"
+            android:textAppearance="@style/textForPartner"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/txtOTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginLeft="@dimen/marginStartContext"
+            android:layout_marginTop="@dimen/marginTopLogo"
+            android:text="@string/otp"
+            android:textAppearance="@style/textNormal"
+            android:textSize="@dimen/login_activity_small_font_size"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtOTP"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_activity_input_height"
+            android:layout_below="@id/txtOTP"
+            android:layout_alignLeft="@id/txtOTP"
+            android:layout_marginTop="@dimen/marginTextContent"
+            android:layout_marginRight="@dimen/marginStartContext"
+            android:background="@drawable/edt_background"
+            android:inputType="numberPassword"
+            android:maxLines="1"
+            android:paddingStart="@dimen/login_activity_input_padding_left"
+            android:paddingEnd="@dimen/login_activity_input_padding_right"/>
+
+        <TextView
+            android:id="@+id/txtNewPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtOTP"
+            android:layout_alignLeft="@id/txtOTP"
+            android:layout_marginTop="12dp"
+            android:text="@string/new_pass"
+            android:textAppearance="@style/textNormal"
+            android:textSize="@dimen/login_activity_small_font_size"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtNewPass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_activity_input_height"
+            android:layout_below="@id/txtNewPass"
+            android:layout_alignLeft="@id/txtNewPass"
+            android:layout_alignRight="@id/edtNewPass"
+            android:layout_marginTop="@dimen/marginTextContent"
+            android:background="@drawable/edt_background"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingStart="@dimen/login_activity_input_padding_left"
+            android:paddingEnd="@dimen/login_activity_input_padding_right"
+            android:scrollHorizontally="true"
+            android:textSize="16dp"
+            android:letterSpacing="0.04"/>
+
+        <TextView
+            android:id="@+id/txtConfNewPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtNewPass"
+            android:layout_alignLeft="@id/txtNewPass"
+            android:layout_marginTop="12dp"
+            android:text="@string/cofirm_password"
+            android:textAppearance="@style/textNormal"
+            android:textSize="@dimen/login_activity_small_font_size"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtConfNewPass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_activity_input_height"
+            android:layout_below="@id/txtConfNewPass"
+            android:layout_alignLeft="@id/txtConfNewPass"
+            android:layout_alignRight="@id/edtConfNewPass"
+            android:layout_marginTop="@dimen/marginTextContent"
+            android:background="@drawable/edt_background"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingStart="@dimen/login_activity_input_padding_left"
+            android:paddingEnd="@dimen/login_activity_input_padding_right"
+            android:scrollHorizontally="true"
+            android:textSize="16dp"
+            android:letterSpacing="0.04"/>
+
+        <Button
+            android:id="@+id/btnReset"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:elevation="0.5dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/login_background"
-            android:orientation="vertical">
+            android:layout_below="@id/edtConfNewPass"
+            android:layout_alignLeft="@id/edtConfNewPass"
+            android:layout_alignRight="@id/edtConfNewPass"
+            android:layout_marginTop="@dimen/marginbtn"
+            android:background="@drawable/btn_normal_background"
+            android:text="@string/btnReset"
+            android:textSize="14dp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="Reset Your Password"
-                android:textColor="@color/title_login_color"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="OTP"
-                android:textColor="@color/title_login_color" />
-
-            <EditText
-                android:id="@+id/reset_otp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Enter your OTP"
-                android:fontFamily="sans-serif-light"
-                android:inputType = "textEmailAddress"
-                android:theme="@style/MyEditText"
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="New Password"
-                android:textColor="@color/title_login_color" />
-
-            <EditText
-                android:id="@+id/reset_newPass"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Enter your password"
-                android:fontFamily="sans-serif-light"
-                android:inputType = "textPassword"
-                android:theme="@style/MyEditText"
-
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="Confirm New Password"
-                android:textColor="@color/title_login_color" />
-
-            <EditText
-                android:id="@+id/reset_cfPass"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:hint="Enter your password"
-                android:fontFamily="sans-serif-light"
-                android:inputType = "textPassword"
-                android:theme="@style/MyEditText"
-                android:layout_marginBottom="20dp"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/btn_reset"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="RESET"
-                android:textSize="18dp"
-                android:background="@drawable/login_button_background"
-                android:textColor="@color/white" />
-
-
-        </LinearLayout>
 
     </RelativeLayout>
 </layout>

@@ -95,6 +95,7 @@
     <string name="password">Password</string>
     <string name="forgot_password">Forgot password</string>
     <string name="btnLogin">Login</string>
+    <string name="btnReset">Reset</string>
     <string name="txtLogin">I don\'t have an account on COEX?</string>
     <string name="btnRegister">REGISTER</string>
     <string name="cofirm_password">Confirm password</string>
@@ -140,6 +141,9 @@
     <string name="activity_map_dialog_txt_des">Are you sure you wanna to quit?</string>
     <string name="item_schedule_txt_title">Info booking</string>
     <string name="edit">Edit</string>
+    <string name="otp">OTP</string>
+    <string name="new_pass">New Password</string>
+    <string name="conf_new_pass">Confirm New Password</string>
     <string name="activity_booking_dialog_txt_title_style_2">Edit Booking</string>
     <string name="activity_booking_dialog_txt_des_style_2">Do you sure change this booking</string>
     <string name="activity_edit_profile_txt_confirm_pass">Confirm pass</string>
