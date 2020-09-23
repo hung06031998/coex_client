@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_gravity="center"
-        android:background="@drawable/address_wrap_background"
+        android:background="@drawable/blur_busine"
         tools:context=".ui.login.LoginFragment">
 
         <RelativeLayout
@@ -25,7 +25,7 @@
                 android:layout_height="106dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/margin"
-                android:src="@drawable/close" />
+                android:src="@drawable/asset_5_6x1" />
 
             <TextView
                 android:id="@+id/forpartner"
