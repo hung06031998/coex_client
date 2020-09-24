@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- defaut-->
-    <dimen name="btn_height">40dp</dimen>
-    <dimen name="icon_h_w">21dp</dimen>
-    <dimen name="txtQ">35dp</dimen>
-    <dimen name="btn">8dp</dimen>
     <!-- authentication    -->
     <dimen name="marginStartContext">24dp</dimen>
-    <dimen name="marginEndContext">18dp</dimen>
     <dimen name="marginTopLogo">70dp</dimen>
     <dimen name="marginTextContent">13dp</dimen>
-    <dimen name="marginTwo">23dp</dimen>
     <dimen name="marginbtn">24dp</dimen>
     <dimen name="margin">86dp</dimen>
 
 
     <!-- Coo   -->
-    <dimen name="icon">15dp</dimen>
-    <dimen name="elevation">4dp</dimen>
-    <dimen name="marginTop">10dp</dimen>
-    <dimen name="marginDetailCoo">15dp</dimen>
-    <dimen name="marginDetailCoo2">20dp</dimen>
-    <dimen name="marginIcon">5dp</dimen>
-    <dimen name="marginIcon2">26dp</dimen>
     <!-- Coo customer    -->
-    <dimen name="marginCustomerRoom">10dp</dimen>
 
     <!-- Add new cooking-->
-    <dimen name="padding">20dp</dimen>
-    <dimen name="eclip">40dp</dimen>
-    <dimen name="eclip1">34dp</dimen>
-    <dimen name="paddingCoffee">8dp</dimen>
-    <dimen name="add_new_other">50dp</dimen>
-    <dimen name="marginEclip">150dp</dimen>
-    <dimen name="mariginBox">2dp</dimen>
 </resources>
