@@ -1,19 +1,17 @@
 package com.example.coex_client.ui.map
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.example.coex_client.R
 import com.example.coex_client.data.UserSharedPref
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
-//    private lateinit var mBottomNavigationView: BottomNavigationView
-//    private lateinit var fragmentSchedule: FragmentSchedule
-//    private lateinit var fragmentSetting: FragmentSetting
+class MapsActivity : AppCompatActivity() {
+    private lateinit var mBottomNavigationView: BottomNavigationView
+    private lateinit var _fragmentSchedule: FragmentSchedule
+    private lateinit var _fragmentSetting: FragmentSetting
     private lateinit var _fragmentHome: HomeFragment
     private lateinit var _userToken: String
     private lateinit var _map: GoogleMap
@@ -37,6 +35,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         checkToken()
+        bindView()
         intiData()
         //
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -59,6 +58,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun intiData() {
         _fragmentHome = HomeFragment()
+        _fragmentSchedule = FragmentSchedule()
+        _fragmentSetting = FragmentSetting()
         loadFragment(_fragmentHome)
     }
 
@@ -70,9 +71,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         transaction.commit()
     }
 
-    private fun bindView(){}
-    override fun onMapReady(p0: GoogleMap?) {
-        TODO("Not yet implemented")
+    fun bindView() {
+        mBottomNavigationView = findViewById(R.id.main_navigation)
+        mBottomNavigationView.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_main_home -> {
+                    loadFragment(_fragmentHome)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.nav_main_schedule -> {
+                    loadFragment(_fragmentSchedule)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.nav_main_setting -> {
+                    loadFragment(_fragmentSetting)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        })
     }
 
     override fun onBackPressed() {

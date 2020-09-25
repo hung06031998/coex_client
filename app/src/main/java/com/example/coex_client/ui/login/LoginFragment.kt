@@ -54,7 +54,7 @@ class LoginFragment : Fragment() {
                     Toast.makeText(context, "Invalid email or password", Toast.LENGTH_SHORT).show()
                 } else {
                     findNavController(this)
-                        .navigate(R.id.action_loginFragment_to_mainActivity2)
+                        .navigate(R.id.action_loginFragment_to_homeFragment)
                 }
 
             })

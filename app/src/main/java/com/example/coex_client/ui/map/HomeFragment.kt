@@ -11,7 +11,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.coex_client.R
+import com.example.coex_client.data.UserSharedPref
 import com.example.coex_client.databinding.FragmentHomeBinding
 import com.example.coex_client.viewmodel.homeFragment.HomeFragmentViewModel
 import com.google.android.gms.common.ConnectionResult
@@ -31,6 +33,10 @@ class HomeFragment : Fragment(),
     private lateinit var _viewXML : View
     private lateinit var _viewModel : HomeFragmentViewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -82,6 +88,5 @@ class HomeFragment : Fragment(),
     override fun onConnectionFailed(p0: ConnectionResult) {
         TODO("Not yet implemented")
     }
-
 
 }
