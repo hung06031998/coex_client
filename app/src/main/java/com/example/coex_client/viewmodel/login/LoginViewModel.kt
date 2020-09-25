@@ -34,6 +34,7 @@ class LoginViewModel : ViewModel() {
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (!task.isSuccessful) {
                     Log.w(TAG, "getInstanceId failed", task.exception)
+                    firebaseToken = task.result?.token.toString()
                     return@OnCompleteListener
                 }
                 // Get new Instance ID token
@@ -42,7 +43,7 @@ class LoginViewModel : ViewModel() {
     }
 
     fun signInAuthorize(email: String, password: String, context: Context) {
-
+        getFirebaseToken()
         userSharedPref = UserSharedPref(context)
 
         Log.d("Firebase token", firebaseToken)

@@ -18,7 +18,7 @@
         <action
             android:id="@+id/action_loginFragment_to_mainActivity2"
 
-            app:destination="@id/mainActivity2" />
+            app:destination="@id/mapActivity" />
         <action
             android:id="@+id/action_loginFragment_to_forgotPassFragment"
             app:destination="@id/forgotPassFragment"
@@ -39,7 +39,7 @@
     </fragment>
 
     <activity
-        android:id="@+id/mainActivity2"
+        android:id="@+id/mapActivity"
         android:name="com.example.coex_client.ui.map.MapsActivity"
         android:label="activity_main2"
         tools:layout="@layout/activity_maps" />
