@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dialog_height"
+    android:layout_centerInParent="true"
+    android:layout_marginLeft="@dimen/dialog_margin"
+    android:layout_marginRight="@dimen/dialog_margin"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_title_height">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/confirm_dialog_txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Confirm your card" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_layout_2_height">
+
+        <TextView
+            android:id="@+id/confirm_dialog_txt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dialog_title_margin_top"
+            android:layout_marginBottom="@dimen/dialog_title_margin_top"
+            android:text="Do you sure add card" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/confirm_dialog_txt_description"
+            android:layout_marginLeft="@dimen/dialog_margin"
+            android:layout_marginRight="@dimen/dialog_margin"
+            android:layout_marginBottom="@dimen/dialog_margin_bottom">
+
+            <Button
+                android:id="@+id/confirm_dialog_btn_cancel"
+                android:layout_width="@dimen/detail_coex_weight"
+                android:layout_height="match_parent"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/cancel_button_normal"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/confirm_dialog_btn_accept"
+                android:layout_width="@dimen/detail_coex_weight"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/normal_button_normal"
+                android:text="@string/accept"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

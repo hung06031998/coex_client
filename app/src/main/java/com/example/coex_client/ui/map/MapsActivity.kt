@@ -7,8 +7,9 @@ import com.example.coex_client.R
 import com.example.coex_client.data.UserSharedPref
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.upit.coex.user.screen.dialog.DialogConfirm
 
-class MapsActivity : AppCompatActivity() {
+class MapsActivity : AppCompatActivity(), DialogConfirm.onClickYes {
     private lateinit var mBottomNavigationView: BottomNavigationView
     private lateinit var _fragmentSchedule: FragmentSchedule
     private lateinit var _fragmentSetting: FragmentSetting
@@ -93,8 +94,16 @@ class MapsActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        super.onBackPressed()
-        finish()
+//        super.onBackPressed()
+        val mDialogCOnfirm =
+            DialogConfirm(this, "Quit", "Are you sure wanna to quit")
+        mDialogCOnfirm.setmOnClickYes(this)
+        mDialogCOnfirm.startLoadingDialog()
+
+    }
+
+    override fun onYesClick() {
+        this.finishAffinity();
     }
     //
 //    override fun onMapReady(googleMap: GoogleMap) {
