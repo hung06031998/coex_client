@@ -16,9 +16,9 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
         <action
-            android:id="@+id/action_loginFragment_to_mainActivity2"
+            android:id="@+id/action_loginFragment_to_homeFragment"
 
-            app:destination="@id/mainActivity2" />
+            app:destination="@id/mapActivity" />
         <action
             android:id="@+id/action_loginFragment_to_forgotPassFragment"
             app:destination="@id/forgotPassFragment"
@@ -37,11 +37,22 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
     </fragment>
+<!--    <fragment-->
+<!--        android:id="@+id/homeFragment"-->
+<!--        android:name="com.example.coex_client.ui.map.HomeFragment"-->
+<!--        android:label="HomeFragment"-->
+<!--        tools:layout="@layout/fragment_home">-->
+<!--        <action-->
+<!--            android:id="@+id/action_homeFragment_to_loginFragment"-->
+<!--            app:destination="@+id/loginFragment"-->
+<!--            />-->
+
+<!--    </fragment>-->
 
     <activity
-        android:id="@+id/mainActivity2"
+        android:id="@+id/mapActivity"
         android:name="com.example.coex_client.ui.map.MapsActivity"
-        android:label="activity_main2"
+        android:label="map_activity"
         tools:layout="@layout/activity_maps" />
 
     <fragment
