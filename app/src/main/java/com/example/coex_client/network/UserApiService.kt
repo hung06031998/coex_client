@@ -14,9 +14,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
 
-private const val USER_API = "https://coex.ddns.net/api/"
+//private const val USER_API = "https://coex.ddns.net/api/"
 
-//private const val USER_API = "https://b8ce0d731aa4.ngrok.io/api/"
+private const val USER_API = "http://10.0.2.2:3000/api/"
 
 private val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
     this.level = HttpLoggingInterceptor.Level.BODY

@@ -11,10 +11,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.example.coex_client.R
-import com.example.coex_client.data.UserSharedPref
 import com.example.coex_client.databinding.FragmentHomeBinding
+import com.example.coex_client.model.map.CWModel
 import com.example.coex_client.viewmodel.homeFragment.HomeFragmentViewModel
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
@@ -81,8 +80,58 @@ class HomeFragment : Fragment(),
     fun bindView() {
     }
 
-    override fun onMarkerClick(p0: Marker?): Boolean {
+    override fun onMarkerClick(marker: Marker): Boolean {
+        var data = _viewModel._cwNearby;
+        for (i in data.indices) {
+            if (marker.position.latitude == data[i].location[0] &&
+                marker.position.longitude == data[i].location[1]
+            ) {
+                setItemToCard(data[i])
+            }
+        }
         return false
+    }
+
+    private fun setItemToCard(coex: CWModel) {
+        item.setVisibility(View.VISIBLE)
+        txtItemTitle.setText(coex.getName())
+        txtDistance.setText(Math.round(coex.getDistance() * 100).toDouble() / 100.toString() + "km")
+        txtItemDes.setText(coex.getAbout())
+        if (coex.getPhoto() != null && coex.getPhoto().size() !== 0) {
+            Glide.with(context).load(IMAGE_LINK_BASE + coex.getPhoto().get(0)).into(imgItemImage)
+        }
+        if (coex.getRooms() != null) {
+            val cost: Long = coex.getRooms().get(0).getPrice()
+            txtItemCost.setText("$cost VND/ hour/ 1 person")
+        } else {
+            txtItemCost.setText("No room to show cost")
+        }
+        if (coex.getService().getDrink()) {
+            layoutItemDrink.setVisibility(View.VISIBLE)
+        } else {
+            layoutItemDrink.setVisibility(View.GONE)
+        }
+        if (coex.getService().getAirConditioning()) {
+            layoutItemAirCon.setVisibility(View.VISIBLE)
+        } else {
+            layoutItemAirCon.setVisibility(View.GONE)
+        }
+        if (coex.getService().getConversionCall()) {
+            layoutItemConCall.setVisibility(View.VISIBLE)
+        } else {
+            layoutItemConCall.setVisibility(View.GONE)
+        }
+        if (coex.getService().getPrinter()) {
+            layoutItemPrinter.setVisibility(View.VISIBLE)
+        } else {
+            layoutItemPrinter.setVisibility(View.GONE)
+        }
+        if (coex.getService().getWifi()) {
+            layoutItemFreeWifi.setVisibility(View.VISIBLE)
+        } else {
+            layoutItemFreeWifi.setVisibility(View.GONE)
+        }
+        temp = coex
     }
 
     override fun onConnectionFailed(p0: ConnectionResult) {

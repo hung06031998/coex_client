@@ -37,6 +37,7 @@ class HomeFragmentViewModel : ViewModel() {
     private lateinit var _ggMap : GoogleMap
     private lateinit var _userSharedPref : UserSharedPref
     private lateinit var _googleApiClient : GoogleApiClient
+    public lateinit var _cwNearby : List<CWModel>
     public fun setUpView(homeFragment: HomeFragment){
         _view = homeFragment
         _userSharedPref = UserSharedPref(_view.requireContext())
@@ -60,7 +61,7 @@ class HomeFragmentViewModel : ViewModel() {
             val radiusInKilometers = radiusInMeters / 1000
             val latitude = cameraPosition.target.latitude
             val longitude = cameraPosition.target.longitude
-            markCoworkingNearbyCameraLocation(radiusInKilometers, latitude, longitude)
+            _cwNearby = markCoworkingNearbyCameraLocation(radiusInKilometers, latitude, longitude)
         }
         var fragment = _view.childFragmentManager.findFragmentById(R.id.map)
         val v1 = fragment!!.view as ViewGroup?
