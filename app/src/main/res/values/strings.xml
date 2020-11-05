@@ -29,6 +29,11 @@
     <string name="detail_coex_printer">Printer</string>
     <string name="detail_coex_conversion_call">Conversion call</string>
     <string name="detail_coex_air_conditioning">Air Conditioning</string>
+    <string name="activity_detail_coex_about_space">About Space</string>
+    <string name="activity_detail_coex_our_service">Our service</string>
+    <string name="activity_detail_coex_view_more">View more</string>
+    <string name="activity_detail_coex_txt_style_room">List room</string>
+    <string name="activity_detail_coex_edt_confirm_booking">Book room</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
