@@ -31,6 +31,42 @@
         <item name="android:letterSpacing">0.04</item>
     </style>
 
+    <style name="title_14_pink_bold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/main_color</item>
+<!--        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/roboto_bold</item>-->
+    </style>
+
+    <style name="title_13_silver_black_regular">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">normal</item>
+<!--        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/roboto_regular</item>-->
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/silver_black</item>
+    </style>
+
+    <style name="title_13_black_regular">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">normal</item>
+<!--        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/roboto_regular</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="title_12_blue_cost">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:typeface">normal</item>
+<!--        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/roboto_regular</item>-->
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
     <!-- Coo    -->
 
 </resources>

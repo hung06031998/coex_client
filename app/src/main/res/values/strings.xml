@@ -24,6 +24,11 @@
     <string name="new_pass">New Password</string>
     <string name="cancel">Cancel</string>
     <string name="accept">Accept</string>
+    <string name="detail_coex_wifi">Free Wifi</string>
+    <string name="detail_coex_drink">Drink</string>
+    <string name="detail_coex_printer">Printer</string>
+    <string name="detail_coex_conversion_call">Conversion call</string>
+    <string name="detail_coex_air_conditioning">Air Conditioning</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
