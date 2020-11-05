@@ -163,6 +163,7 @@ class HomeFragmentViewModel : ViewModel() {
                             _ggMap.addMarker(MarkerOptions().position(LatLng(station.location[0], station.location[1])))
                         }
                     }
+                    _view.refreshData(result);
                 } else {
                     Log.d("getCWNearby", "listCWNearby : errorrrrrr")
                 }
@@ -174,9 +175,7 @@ class HomeFragmentViewModel : ViewModel() {
         })
         return result
     }
-    private fun moveToCurrentLocation() {
-        TODO("Not yet implemented")
-    }
+
 
     fun requestPermissionToAccessLocation() {
         if (Build.VERSION.SDK_INT >= 23) {

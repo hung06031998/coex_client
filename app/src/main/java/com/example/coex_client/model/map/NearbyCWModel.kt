@@ -1,34 +1,34 @@
 package com.example.coex_client.model.map
 
 import com.google.gson.annotations.SerializedName;
+import java.io.Serializable
 
 data class NearbyCWModel(
     @SerializedName("listCoWorking")
     var listCoWorking: List<CWModel>
 )
 
-data class CWModel (
-
+class CWModel : Serializable{
     @SerializedName("id")
-    var id: String,
+    lateinit var id: String
     @SerializedName("name")
-    var name: String,
+    lateinit var name: String
     @SerializedName("about")
-    var about: String,
+    lateinit var about: String
     @SerializedName("phone")
-    var phone: String,
+    lateinit var phone: String
     @SerializedName("photo")
-    var photo: List<Object>,
+    lateinit var photo: List<Object>
     @SerializedName("address")
-    var address: String,
+    lateinit var address: String
     @SerializedName("location")
-    var location: List<Double>,
+    lateinit var location: List<Double>
     @SerializedName("starRating")
-    var starRating: List<Integer>,
+    lateinit var starRating: List<Integer>
     @SerializedName("createdAt")
-    var createdAt: String,
+    lateinit var createdAt: String
     @SerializedName("modifiedAt")
-    var modifiedAt: String,
+    lateinit var modifiedAt: String
     @SerializedName("userId")
-    var userId: String
-)
+    lateinit var userId: String
+}

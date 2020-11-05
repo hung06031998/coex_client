@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".MainLoginActivity"></activity>
+        <activity android:name=".ui.detail.DetailCOEXActivity"></activity>
+        <activity android:name=".MainLoginActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
