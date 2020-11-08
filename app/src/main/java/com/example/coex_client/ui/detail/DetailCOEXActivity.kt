@@ -2,6 +2,7 @@ package com.example.coex_client.ui.detail
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
@@ -88,31 +89,30 @@ class DetailCOEXActivity : AppCompatActivity() {
 //            indicator.setViewPager(mViewPaper)
 //            adapter.registerDataSetObserver(indicator.getDataSetObserver())
 //        }
-//        if (data.getService().getDrink()) {
-//            layoutDrink.visibility = View.VISIBLE
-//        } else {
-//            layoutDrink.visibility = View.GONE
-//        }
-//        if (data.getService().getAirConditioning()) {
-//            layoutAirCon.visibility = View.VISIBLE
-//        } else {
-//            layoutAirCon.visibility = View.GONE
-//        }
-//        if (data.getService().getConversionCall()) {
-//            layoutConCall.visibility = View.VISIBLE
-//        } else {
-//            layoutConCall.visibility = View.GONE
-//        }
-//        if (data.getService().getPrinter()) {
-//            layoutPrinter.visibility = View.VISIBLE
-//        } else {
-//            layoutPrinter.visibility = View.GONE
-//        }
-//        if (data.getService().getWifi()) {
-//            layoutWifi.visibility = View.VISIBLE
-//        } else {
-//            layoutWifi.visibility = View.GONE
-//        }
+        layoutAirCon.visibility = View.GONE
+        layoutConCall.visibility = View.GONE
+        layoutDrink.visibility = View.GONE
+        layoutPrinter.visibility = View.GONE
+        layoutWifi.visibility = View.GONE
+        if (!data.rooms[0].coWorkingId.isNullOrEmpty()) {
+            for (room in data.rooms){
+                if (room.service.drink){
+                    layoutDrink.visibility = View.VISIBLE
+                }
+                if (room.service.airCondition){
+                    layoutAirCon.visibility = View.VISIBLE
+                }
+                if (room.service.conversionCall){
+                    layoutConCall.visibility = View.VISIBLE
+                }
+                if (room.service.printer){
+                    layoutPrinter.visibility = View.VISIBLE
+                }
+                if (room.service.wifi){
+                    layoutWifi.visibility = View.VISIBLE
+                }
+            }
+        }
 //        val roomData: List<Room> = data.getRooms()
 //        adapter = DetailItemAdapter()
 //        adapter.setData(roomData)

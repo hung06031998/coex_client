@@ -12,7 +12,7 @@ class CWModel : Serializable {
     @SerializedName("phone")
     lateinit var phone: String
     @SerializedName("photo")
-    lateinit var photo: List<Object>
+    var photo: List<Object> = listOf()
     @SerializedName("address")
     lateinit var address: String
     @SerializedName("location")
@@ -26,5 +26,5 @@ class CWModel : Serializable {
     @SerializedName("userId")
     lateinit var userId: String
     @SerializedName("rooms")
-    lateinit var rooms: List<RoomModel>
+    var rooms: List<RoomModel> = listOf(RoomModel())
 }

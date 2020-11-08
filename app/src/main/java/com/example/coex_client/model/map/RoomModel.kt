@@ -13,7 +13,7 @@ class RoomModel : Serializable {
     @SerializedName("price")
     var price: Int = 0
     @SerializedName("photo")
-    lateinit var photo: List<Object>
+    var photo: List<Object> = listOf()
     @SerializedName("maxPerson")
     var maxPerson: Int = 0
     @SerializedName("createdAt")
@@ -21,7 +21,7 @@ class RoomModel : Serializable {
     @SerializedName("modifiedAt")
     lateinit var modifiedAt: String
     @SerializedName("coWorkingId")
-    lateinit var coWorkingId: String
+    var coWorkingId: String = ""
     @SerializedName("service")
-    lateinit var service: ServiceModel
+    var service: ServiceModel = ServiceModel()
 }

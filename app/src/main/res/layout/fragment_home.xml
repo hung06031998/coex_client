@@ -135,7 +135,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/detail_coex_type_1_margin"
                         android:layout_marginTop="@dimen/detail_coex_margin_top"
                         android:layout_marginRight="@dimen/detail_coex_type_1_margin"
@@ -147,8 +147,8 @@
                             android:text="Our of service" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -229,8 +229,7 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/detail_coex_weight"
-                                android:layout_weight="1"
-                                android:visibility="gone">
+                                android:layout_weight="1">
 
                                 <RelativeLayout
                                     android:id="@+id/fragment_home_layout_conversion_call"

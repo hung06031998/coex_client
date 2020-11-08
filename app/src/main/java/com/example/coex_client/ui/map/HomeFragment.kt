@@ -108,6 +108,11 @@ class HomeFragment : Fragment(),
         txtItemDes = _viewXML.findViewById(R.id.fragment_home_txt_description)
         txtItemTitle = _viewXML.findViewById(R.id.fragment_home_txt_name)
         txtDistance = _viewXML.findViewById(R.id.fragment_home_txt_distance)
+        layoutItemAirCon = _viewXML.findViewById(R.id.fragment_home_layout_air_condirioning)
+        layoutItemConCall = _viewXML.findViewById(R.id.fragment_home_layout_conversion_call)
+        layoutItemPrinter = _viewXML.findViewById(R.id.fragment_home_layout_printer)
+        layoutItemFreeWifi = _viewXML.findViewById(R.id.fragment_home_layout_free_wifi)
+        layoutItemDrink = _viewXML.findViewById(R.id.fragment_home_layout_drink)
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
@@ -126,42 +131,38 @@ class HomeFragment : Fragment(),
         txtItemTitle.text = coex.name
 //        txtDistance.setText((coex.getDistance() * 100).roundToInt().toDouble() / 100.toString() + "km")
         txtDistance.text = "chua lam"
-//        txtItemDes.text = coex.about
         txtItemDes.text = coex.about
 //        if (coex.photo.isNotEmpty()) {
 //            Glide.with(context).load(IMAGE_LINK_BASE + coex.getPhoto().get(0)).into(imgItemImage)
 //        }
-//        if (coex.getRooms() != null) {
-//            val cost: Long = coex.getRooms().get(0).getPrice()
-//            txtItemCost.setText("$cost VND/ hour/ 1 person")
-//        } else {
-//            txtItemCost.setText("No room to show cost")
-//        }
-//        if (coex.getService().getDrink()) {
-//            layoutItemDrink.setVisibility(View.VISIBLE)
-//        } else {
-//            layoutItemDrink.setVisibility(View.GONE)
-//        }
-//        if (coex.getService().getAirConditioning()) {
-//            layoutItemAirCon.setVisibility(View.VISIBLE)
-//        } else {
-//            layoutItemAirCon.setVisibility(View.GONE)
-//        }
-//        if (coex.getService().getConversionCall()) {
-//            layoutItemConCall.setVisibility(View.VISIBLE)
-//        } else {
-//            layoutItemConCall.setVisibility(View.GONE)
-//        }
-//        if (coex.getService().getPrinter()) {
-//            layoutItemPrinter.setVisibility(View.VISIBLE)
-//        } else {
-//            layoutItemPrinter.setVisibility(View.GONE)
-//        }
-//        if (coex.getService().getWifi()) {
-//            layoutItemFreeWifi.setVisibility(View.VISIBLE)
-//        } else {
-//            layoutItemFreeWifi.setVisibility(View.GONE)
-//        }
+        layoutItemDrink.visibility = View.GONE
+        layoutItemFreeWifi.visibility = View.GONE
+        layoutItemPrinter.visibility = View.GONE
+        layoutItemConCall.visibility = View.GONE
+        layoutItemAirCon.visibility = View.GONE
+        if (!coex.rooms[0].coWorkingId.isNullOrEmpty()) {
+            val cost: Int = coex.rooms[0].price
+            txtItemCost.text = "$cost VND/ hour/ 1 person"
+            for (room in coex.rooms){
+                if (room.service.drink){
+                    layoutItemDrink.visibility = View.VISIBLE
+                }
+                if (room.service.airCondition){
+                    layoutItemAirCon.visibility = View.VISIBLE
+                }
+                if (room.service.conversionCall){
+                    layoutItemConCall.visibility = View.VISIBLE
+                }
+                if (room.service.printer){
+                    layoutItemPrinter.visibility = View.VISIBLE
+                }
+                if (room.service.wifi){
+                    layoutItemFreeWifi.visibility = View.VISIBLE
+                }
+            }
+        } else {
+            txtItemCost.text = "No room to show cost"
+        }
         selectedCW = coex
     }
 
