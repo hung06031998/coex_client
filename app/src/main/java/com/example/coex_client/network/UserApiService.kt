@@ -1,3 +1,5 @@
+import com.example.coex_client.model.booking.BookingRequest
+import com.example.coex_client.model.booking.BookingRespone
 import com.example.coex_client.model.forgot.ForgotRequest
 import com.example.coex_client.model.forgot.ResetRequest
 import com.example.coex_client.model.login.LoginRequest
@@ -45,6 +47,10 @@ interface UserApiService {
     @Headers("Content-Type:application/json")
     @POST("user/log-in/client")
     fun login(@Body info: LoginRequest): retrofit2.Call<LoginResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("bookings")
+    fun booking(@Body info: BookingRequest): retrofit2.Call<BookingRespone>
 
 
     @Headers("Content-Type:application/json")

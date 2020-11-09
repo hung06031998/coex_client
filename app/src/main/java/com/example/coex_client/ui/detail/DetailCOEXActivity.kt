@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.example.coex_client.MainLoginActivity
 import com.example.coex_client.R
 import com.example.coex_client.model.map.CWModel
 import com.example.coex_client.model.map.RoomModel
@@ -44,17 +45,15 @@ class DetailCOEXActivity : AppCompatActivity(), DetailItemAdapter.OnItemClickLis
         initWindow()
         myDialog.dismiss()
 
-//        btnSubmit.setOnClickListener {
-//            if (data.getRooms() != null) {
-//                if (data.getRooms().size() > 0) {
-//                    val moveData =
-//                        Intent(this@DetailCOEXActivity, BookingActivity::class.java)
-//                    moveData.putExtra("type", 1)
-//                    moveData.putExtra("key", data)
-//                    startActivityForResult(moveData, DetailCOEXActivity.REQUEST_DATA_BOOKING)
-//                }
-//            }
-//        }
+        btnSubmit.setOnClickListener {
+            if (!data.rooms[0].coWorkingId.isNullOrBlank()) {
+                val moveData =
+                    Intent(this, BookingActivity::class.java)
+                moveData.putExtra("type", 1)
+                moveData.putExtra("key", data)
+                startActivity(moveData)
+            }
+        }
         imgBack.setOnClickListener { finish() }
         txtShowMore.setOnClickListener { myDialog.show() }
     }
@@ -128,7 +127,7 @@ class DetailCOEXActivity : AppCompatActivity(), DetailItemAdapter.OnItemClickLis
     }
 
     override fun onItemClick(item: Int) {
-        var moveData = Intent(this@DetailCOEXActivity, BookingActivity::class.java)
+        var moveData = Intent(this, MainLoginActivity::class.java)
         moveData.putExtra("type", 3)
         moveData.putExtra("key", data)
         moveData.putExtra("room", item)
